@@ -1,0 +1,1 @@
+grep -n "<li data-group" Redis命令（commands）\ --\ redis中文资料站.html | grep data-group | sed  's/.*data-group=\([^>]*\)*>.*href=\([^>]*\)>\([^<]*\)<.*&nbsp;\([^<]*\)<.*class="summary">\([^<]*\).*/\1 # \2 # \3#\4 # \5/g'
