@@ -1,0 +1,156 @@
+string # http://redis.cn/commands/append.html # APPEND#key value # 追加一个值到key上
+connection # http://redis.cn/commands/auth.html # AUTH#password # 验证服务器
+server # http://redis.cn/commands/bgrewriteaof.html # BGREWRITEAOF# # 异步重写追加文件
+server # http://redis.cn/commands/bgsave.html # BGSAVE# # 异步保存数据集到磁盘上
+string # http://redis.cn/commands/bitcount.html # BITCOUNT#key [start] [end] # 统计字符串指定起始位置的字节数
+string # http://redis.cn/commands/bitop.html # BITOP#operation destkey key [key ...] # Perform bitwise operations between strings
+list # http://redis.cn/commands/blpop.html # BLPOP#key [key ...] timeout # 删除，并获得该列表中的第一元素，或阻塞，直到有一个可用
+list # http://redis.cn/commands/brpop.html # BRPOP#key [key ...] timeout # 删除，并获得该列表中的最后一个元素，或阻塞，直到有一个可用
+list # http://redis.cn/commands/brpoplpush.html # BRPOPLPUSH#source destination timeout # 弹出一个列表的值，将它推到另一个列表，并返回它;或阻塞，直到有一个可用
+server # http://redis.cn/commands/client-kill.html # CLIENT KILL#ip:port # 关闭客户端连接
+server # http://redis.cn/commands/client-list.html # CLIENT LIST# # 获得客户端连接列表
+server # http://redis.cn/commands/client-pause.html # CLIENT PAUSE#timeout # 暂停处理客户端命令
+server # http://redis.cn/commands/client-getname.html # CLIENT GETNAME# # 获得当前连接名称
+server # http://redis.cn/commands/client-setname.html # CLIENT SETNAME#connection-name # 设置当前连接的名字
+server # http://redis.cn/commands/config-get.html # CONFIG GET#parameter # 获取配置参数的值
+server # http://redis.cn/commands/config-rewrite.html # CONFIG REWRITE# # 从写内存中的配置文件
+server # http://redis.cn/commands/config-set.html # CONFIG SET#parameter value # 获取配置参数的值
+server # http://redis.cn/commands/config-resetstat.html # CONFIG RESETSTAT# # 复位再分配使用info命令报告的统计
+server # http://redis.cn/commands/dbsize.html # DBSIZE# # 返回当前数据库里面的keys数量
+server # http://redis.cn/commands/debug-object.html # DEBUG OBJECT#key # 获取一个key的debug信息
+server # http://redis.cn/commands/debug-segfault.html # DEBUG SEGFAULT# # 使服务器崩溃
+string # http://redis.cn/commands/decr.html # DECR#key # 整数原子减1
+string # http://redis.cn/commands/decrby.html # DECRBY#key decrement # 原子减指定的整数
+generic # http://redis.cn/commands/del.html # DEL#key [key ...] # 删除一个key
+transactions # http://redis.cn/commands/discard.html # DISCARD# # 丢弃所有 MULTI 之后发的命令
+generic # http://redis.cn/commands/dump.html # DUMP#key # 导出key的值
+connection # http://redis.cn/commands/echo.html # ECHO#message # 回显输入的字符串
+scripting # http://redis.cn/commands/eval.html # EVAL#script numkeys key [key ...] arg [arg ...] # 在服务器端执行 LUA 脚本
+scripting # http://redis.cn/commands/evalsha.html # EVALSHA#sha1 numkeys key [key ...] arg [arg ...] # 在服务器端执行 LUA 脚本
+transactions # http://redis.cn/commands/exec.html # EXEC# # 执行所有 MULTI 之后发的命令
+generic # http://redis.cn/commands/exists.html # EXISTS#key # 查询一个key是否存在
+generic # http://redis.cn/commands/expire.html # EXPIRE#key seconds # 设置一个key的过期的秒数
+generic # http://redis.cn/commands/expireat.html # EXPIREAT#key timestamp # 设置一个UNIX时间戳的过期时间
+server # http://redis.cn/commands/flushall.html # FLUSHALL# # 清空所有数据库
+server # http://redis.cn/commands/flushdb.html # FLUSHDB# # 清空当前的数据库
+string # http://redis.cn/commands/get.html # GET#key # 获取key的值
+string # http://redis.cn/commands/getbit.html # GETBIT#key offset # 返回位的值存储在关键的字符串值的偏移量。
+string # http://redis.cn/commands/getrange.html # GETRANGE#key start end # 获取存储在key上的值的一个子字符串
+string # http://redis.cn/commands/getset.html # GETSET#key value # 设置一个key的value，并获取设置前的值
+hash # http://redis.cn/commands/hdel.html # HDEL#key field [field ...] # 删除一个或多个哈希域
+hash # http://redis.cn/commands/hexists.html # HEXISTS#key field # 判断给定域是否存在于哈希集中
+hash # http://redis.cn/commands/hget.html # HGET#key field # 读取哈希域的的值
+hash # http://redis.cn/commands/hgetall.html # HGETALL#key # 从哈希集中读取全部的域和值
+hash # http://redis.cn/commands/hincrby.html # HINCRBY#key field increment # 将哈希集中指定域的值增加给定的数字
+hash # http://redis.cn/commands/hincrbyfloat.html # HINCRBYFLOAT#key field increment # 将哈希集中指定域的值增加给定的浮点数
+hash # http://redis.cn/commands/hkeys.html # HKEYS#key # 获取hash的所有字段
+hash # http://redis.cn/commands/hlen.html # HLEN#key # 获取hash里所有字段的数量
+hash # http://redis.cn/commands/hmget.html # HMGET#key field [field ...] # 获取hash里面指定字段的值
+hash # http://redis.cn/commands/hmset.html # HMSET#key field value [field value ...] # 设置hash字段值
+hash # http://redis.cn/commands/hscan.html # HSCAN#key cursor [MATCH pattern] [COUNT count] # 迭代hash里面的元素
+hash # http://redis.cn/commands/hset.html # HSET#key field value # 设置hash里面一个字段的值
+hash # http://redis.cn/commands/hsetnx.html # HSETNX#key field value # 设置hash的一个字段，只有当这个字段不存在时有效
+hash # http://redis.cn/commands/hvals.html # HVALS#key # 获得hash的所有值
+string # http://redis.cn/commands/incr.html # INCR#key # 执行原子加1操作
+string # http://redis.cn/commands/incrby.html # INCRBY#key increment # 执行原子增加一个整数
+string # http://redis.cn/commands/incrbyfloat.html # INCRBYFLOAT#key increment # 执行原子增加一个浮点数
+server # http://redis.cn/commands/info.html # INFO#[section] # 获得服务器的详细信息
+generic # http://redis.cn/commands/keys.html # KEYS#pattern # 查找所有匹配给定的模式的键
+server # http://redis.cn/commands/lastsave.html # LASTSAVE# # 获得最后一次同步磁盘的时间
+list # http://redis.cn/commands/lindex.html # LINDEX  # key index # 获取一个元素，通过其索引列表
+list # http://redis.cn/commands/linsert.html # LINSERT # key BEFORE|AFTER pivot value # 在列表中的另一个元素之前或之后插入一个元素
+list # http://redis.cn/commands/llen.html # LLEN#key # 获得队列(List)的长度
+list # http://redis.cn/commands/lpop.html # LPOP#key # 从队列的左边出队一个元素
+list # http://redis.cn/commands/lpush.html # LPUSH#key value [value ...] # 从队列的左边入队一个或多个元素
+list # http://redis.cn/commands/lpushx.html # LPUSHX#key value # 当队列存在时，从队到左边入队一个元素
+list # http://redis.cn/commands/lrange.html # LRANGE#key start stop # 从列表中获取指定返回的元素
+list # http://redis.cn/commands/lrem.html # LREM#key count value # 从列表中删除元素
+list # http://redis.cn/commands/lset.html # LSET#key index value # 设置队列里面一个元素的值
+list # http://redis.cn/commands/ltrim.html # LTRIM#key start stop # 修剪到指定范围内的清单
+string # http://redis.cn/commands/mget.html # MGET#key [key ...] # 获得所有key的值
+generic # http://redis.cn/commands/migrate.html # MIGRATE#host port key destination-db timeout # 原子性的将key从redis的一个实例移到另一个实例
+server # http://redis.cn/commands/monitor.html # MONITOR# # 实时监控服务器
+generic # http://redis.cn/commands/move.html # MOVE#key db # 移动一个key到另一个数据库
+string # http://redis.cn/commands/mset.html # MSET#key value [key value ...] # 设置多个key value
+string # http://redis.cn/commands/msetnx.html # MSETNX#key value [key value ...] # 设置多个key value,仅当key存在时
+transactions # http://redis.cn/commands/multi.html # MULTI# # 标记一个事务块开始
+generic # http://redis.cn/commands/object.html # OBJECT#subcommand [arguments [arguments ...]] # 检查内部的再分配对象
+generic # http://redis.cn/commands/persist.html # PERSIST#key # 移除key的过期时间
+generic # http://redis.cn/commands/pexpire.html # PEXPIRE#key milliseconds # 设置一个key的过期的毫秒数
+generic # http://redis.cn/commands/pexpireat.html # PEXPIREAT#key milliseconds-timestamp # 设置一个带毫秒的UNIX时间戳的过期时间
+hyperLogLog # http://redis.cn/commands/pfadd.html # PFADD#key element [element ...] # Adds the specified elements to the specified HyperLogLog.
+hyperLogLog # http://redis.cn/commands/pfcount.html # PFCOUNT#key [key ...] # Return the approximated cardinality of the set(s) observed by the HyperLogLog at key(s).
+hyperLogLog # http://redis.cn/commands/pfmerge.html # PFMERGE#destkey sourcekey [sourcekey ...] # Merge N different HyperLogLogs into a single one.
+connection # http://redis.cn/commands/ping.html # PING# # Ping 服务器
+string # http://redis.cn/commands/psetex.html # PSETEX#key milliseconds value # Set the value and expiration in milliseconds of a key
+pubsub # http://redis.cn/commands/psubscribe.html # PSUBSCRIBE#pattern [pattern ...] # 听出版匹配给定模式的渠道的消息
+generic # http://redis.cn/commands/pttl.html # PTTL#key # 获取key的有效毫秒数
+pubsub # http://redis.cn/commands/publish.html # PUBLISH#channel message # 发布一条消息到频道
+pubsub # http://redis.cn/commands/pubsub.html # PUBSUB#subcommand [argument [argument ...]] # 检查的Pub/Sub子系统的状态
+pubsub # http://redis.cn/commands/punsubscribe.html # PUNSUBSCRIBE#[pattern [pattern ...]] # 停止发布到匹配给定模式的渠道的消息听
+connection # http://redis.cn/commands/quit.html # QUIT# # 关闭连接，退出
+generic # http://redis.cn/commands/randomkey.html # RANDOMKEY# # 返回一个随机的key
+generic # http://redis.cn/commands/rename.html # RENAME#key newkey # 将一个key重命名
+generic # http://redis.cn/commands/renamenx.html # RENAMENX#key newkey # 重命名一个key,新的key必须是不存在的key
+generic # http://redis.cn/commands/restore.html # RESTORE#key ttl serialized-value # Create a key using the provided serialized value, previously obtained using DUMP.
+list # http://redis.cn/commands/rpop.html # RPOP#key # 从队列的右边出队一个元素
+list # http://redis.cn/commands/rpoplpush.html # RPOPLPUSH#source destination # 删除列表中的最后一个元素，将其追加到另一个列表
+list # http://redis.cn/commands/rpush.html # RPUSH#key value [value ...] # 从队列的右边入队一个元素
+list # http://redis.cn/commands/rpushx.html # RPUSHX#key value # 从队列的右边入队一个元素，仅队列存在时有效
+set # http://redis.cn/commands/sadd.html # SADD#key member [member ...] # 添加一个或者多个元素到集合(set)里
+server # http://redis.cn/commands/save.html # SAVE# # 同步数据到磁盘上
+set # http://redis.cn/commands/scard.html # SCARD#key # 获取集合里面的元素数量
+generic # http://redis.cn/commands/scan.html # SCAN#cursor [MATCH pattern] [COUNT count] # 增量迭代key
+scripting # http://redis.cn/commands/script-exists.html # SCRIPT EXISTS#script [script ...] # Check existence of scripts in the script cache.
+scripting # http://redis.cn/commands/script-flush.html # SCRIPT FLUSH# # 删除服务器缓存中所有Lua脚本。
+scripting # http://redis.cn/commands/script-kill.html # SCRIPT KILL# # 杀死当前正在运行的 Lua 脚本。
+scripting # http://redis.cn/commands/script-load.html # SCRIPT LOAD#script # 从服务器缓存中装载一个Lua脚本。
+set # http://redis.cn/commands/sdiff.html # SDIFF#key [key ...] # 获得队列不存在的元素
+set # http://redis.cn/commands/sdiffstore.html # SDIFFSTORE#destination key [key ...] # 获得队列不存在的元素，并存储在一个关键的结果集
+connection # http://redis.cn/commands/select.html # SELECT#index # 选择数据库
+string # http://redis.cn/commands/set.html # SET#key value # 设置一个key的value值
+string # http://redis.cn/commands/setbit.html # SETBIT#key offset value # Sets or clears the bit at offset in the string value stored at key
+string # http://redis.cn/commands/setex.html # SETEX#key seconds value # 设置key-value并设置过期时间（单位：秒）
+string # http://redis.cn/commands/setnx.html # SETNX#key value # 设置的一个关键的价值，只有当该键不存在
+string # http://redis.cn/commands/setrange.html # SETRANGE#key offset value # Overwrite part of a string at key starting at the specified offset
+server # http://redis.cn/commands/shutdown.html # SHUTDOWN#[NOSAVE] [SAVE] # 关闭服务
+set # http://redis.cn/commands/sinter.html # SINTER#key [key ...] # 获得两个集合的交集
+set # http://redis.cn/commands/sinterstore.html # SINTERSTORE#destination key [key ...] # 获得两个集合的交集，并存储在一个关键的结果集
+set # http://redis.cn/commands/sismember.html # SISMEMBER#key member # 确定一个给定的值是一个集合的成员
+server # http://redis.cn/commands/slaveof.html # SLAVEOF#host port # 指定当前服务器的主服务器
+server # http://redis.cn/commands/slowlog.html # SLOWLOG#subcommand [argument] # 管理再分配的慢查询日志
+set # http://redis.cn/commands/smembers.html # SMEMBERS#key # 获取集合里面的所有key
+set # http://redis.cn/commands/smove.html # SMOVE#source destination member # 移动集合里面的一个key到另一个集合
+generic # http://redis.cn/commands/sort.html # SORT#key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern ...]] [ASC|DESC] [ALPHA] [STORE destination] # 对队列、集合、有序集合排序
+set # http://redis.cn/commands/spop.html # SPOP#key # 删除并获取一个集合里面的元素
+set # http://redis.cn/commands/srandmember.html # SRANDMEMBER#key [count] # 从集合里面随机获取一个key
+set # http://redis.cn/commands/srem.html # SREM#key member [member ...] # 从集合里删除一个或多个key
+set # http://redis.cn/commands/sscan.html # SSCAN#key cursor [MATCH pattern] [COUNT count] # 迭代set里面的元素
+string # http://redis.cn/commands/strlen.html # STRLEN#key # 获取指定key值的长度
+pubsub # http://redis.cn/commands/subscribe.html # SUBSCRIBE#channel [channel ...] # 聆听发布途径的消息
+set # http://redis.cn/commands/sunion.html # SUNION#key [key ...] # 添加多个set元素
+set # http://redis.cn/commands/sunionstore.html # SUNIONSTORE#destination key [key ...] # 合并set元素，并将结果存入新的set里面
+server # http://redis.cn/commands/sync.html # SYNC# # 用于复制的内部命令
+server # http://redis.cn/commands/time.html # TIME# # 返回当前服务器时间
+generic # http://redis.cn/commands/ttl.html # TTL#key # 获取key的有效时间（单位：秒）
+generic # http://redis.cn/commands/type.html # TYPE#key # 获取key的存储类型
+pubsub # http://redis.cn/commands/unsubscribe.html # UNSUBSCRIBE#[channel [channel ...]] # 停止发布途径的消息听
+transactions # http://redis.cn/commands/unwatch.html # UNWATCH# # 取消事务
+transactions # http://redis.cn/commands/watch.html # WATCH#key [key ...] # 锁定key直到执行了 MULTI/EXEC 命令
+sorted_set # http://redis.cn/commands/zadd.html # ZADD#key score member [score member ...] # 添加到有序set的一个或多个成员，或更新的分数，如果它已经存在
+sorted_set # http://redis.cn/commands/zcard.html # ZCARD#key # 获取一个排序的集合中的成员数量
+sorted_set # http://redis.cn/commands/zcount.html # ZCOUNT#key min max # 给定值范围内的成员数与分数排序
+sorted_set # http://redis.cn/commands/zincrby.html # ZINCRBY#key increment member # 增量的一名成员在排序设置的评分
+sorted_set # http://redis.cn/commands/zinterstore.html # ZINTERSTORE#destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX] # 相交多个排序集，导致排序的设置存储在一个新的关键
+sorted_set # http://redis.cn/commands/zrange.html # ZRANGE#key start stop [WITHSCORES] # 返回的成员在排序设置的范围，由指数
+sorted_set # http://redis.cn/commands/zrangebyscore.html # ZRANGEBYSCORE#key min max [WITHSCORES] [LIMIT offset count] # 返回的成员在排序设置的范围，由得分
+sorted_set # http://redis.cn/commands/zrank.html # ZRANK#key member # 确定在排序集合成员的索引
+sorted_set # http://redis.cn/commands/zrem.html # ZREM#key member [member ...] # 从排序的集合中删除一个或多个成员
+sorted_set # http://redis.cn/commands/zremrangebyrank.html # ZREMRANGEBYRANK#key start stop # 在排序设置的所有成员在给定的索引中删除
+sorted_set # http://redis.cn/commands/zremrangebyscore.html # ZREMRANGEBYSCORE#key min max # 删除一个排序的设置在给定的分数所有成员
+sorted_set # http://redis.cn/commands/zrevrange.html # ZREVRANGE#key start stop [WITHSCORES] # 在排序的设置返回的成员范围，通过索引，下令从分数高到低
+sorted_set # http://redis.cn/commands/zrevrangebyscore.html # ZREVRANGEBYSCORE#key max min [WITHSCORES] [LIMIT offset count] # 返回的成员在排序设置的范围，由得分，下令从分数高到低
+sorted_set # http://redis.cn/commands/zrevrank.html # ZREVRANK#key member # 确定指数在排序集的成员，下令从分数高到低
+sorted_set # http://redis.cn/commands/zscan.html # ZSCAN#key cursor [MATCH pattern] [COUNT count] # 迭代sorted sets里面的元素
+sorted_set # http://redis.cn/commands/zscore.html # ZSCORE#key member # 获取成员在排序设置相关的比分
+sorted_set # http://redis.cn/commands/zunionstore.html # ZUNIONSTORE#destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX] # 添加多个排序集和导致排序的设置存储在一个新的关键
