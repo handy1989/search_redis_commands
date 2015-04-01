@@ -17,10 +17,10 @@ def print_result(results):
         args = item[1].strip()
         instruction = item[2].strip()
         link = item[3].strip()
-        print "    <item uid=\"test\" autocomplete=\"\" arg=\"" + link + "\">"
+        print "    <item arg=\"" + link + "\">"
         print "        <title>" + key + " " + args + "</title>"
         print "        <subtitle>" + instruction + "</subtitle>"
-        print "        <icon>/Users/zhangmenghan/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/user.workflow.3E712875-F425-40A6-B534-2F99BEDB9FFA/redis.png</icon>"
+        print "        <icon>redis.png</icon>"
         print "    </item>"
     print "</items>"
 
