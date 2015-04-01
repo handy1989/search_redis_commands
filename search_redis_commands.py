@@ -9,6 +9,7 @@ import sys
 ##########################
 def print_result(results):
     print '''<?xml version="1.0"?>'''
+    print "<items>"
     for item in results:
         if len(item) != 4:
             continue
@@ -16,7 +17,6 @@ def print_result(results):
         args = item[1].strip()
         instruction = item[2].strip()
         link = item[3].strip()
-        print "<items>"
         print "    <item uid=\"test\" autocomplete=\"\" arg=\"" + link + "\">"
         print "        <title>" + key + " " + args + "</title>"
         print "        <subtitle>" + instruction + "</subtitle>"
