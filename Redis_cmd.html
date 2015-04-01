@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0029)http://redis.cn/commands.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Redis命令（commands） -- redis中文资料站_files/shares.php" charset="utf-8"></script>
+    
+    <link href="./Redis命令（commands） -- redis中文资料站_files/styles.css" rel="stylesheet" type="text/css">
+    <link href="http://redis.cn/images/favicon.png" rel="shortcut icon">
+    <script src="./Redis命令（commands） -- redis中文资料站_files/jquery.min.1.4.js"></script>
+    <script src="./Redis命令（commands） -- redis中文资料站_files/app.js"></script>
+    <script src="./Redis命令（commands） -- redis中文资料站_files/common.js"></script>
+    <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <title>Redis命令（commands）  -- redis中文资料站</title>
+	<meta http-equiv="description" content="redis 命令（commands）列表，列出Redis的全部功能命令集合，介绍各个命令的参数和用法。">
+	
+  <style type="text/css"></style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+  <body class=""><link href="./Redis命令（commands） -- redis中文资料站_files/jiathis_counter.css" rel="stylesheet" type="text/css"><script src="./Redis命令（commands） -- redis中文资料站_files/jiathis.php" charset="utf-8"></script><link href="./Redis命令（commands） -- redis中文资料站_files/jiathis_share.css" rel="stylesheet" type="text/css"><iframe frameborder="0" style="position: absolute; display: none; opacity: 0;"></iframe><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; top: 50%; left: 50%; overflow: auto;"></div><div class="jiathis_style" style="position: absolute; z-index: 1000000000; display: none; overflow: auto;"></div><iframe frameborder="0" src="./Redis命令（commands） -- redis中文资料站_files/jiathis_utility.html" style="display: none;"></iframe>   
+    <script src="./Redis命令（commands） -- redis中文资料站_files/head.js"></script><header>      <div class="container">        <a href="http://redis.cn/">          <img alt="Redis" height="30" src="./Redis命令（commands） -- redis中文资料站_files/redis.png" width="93">        </a>        <nav>          <a href="./Redis命令（commands） -- redis中文资料站_files/Redis命令（commands） -- redis中文资料站.html">命令</a>          <a href="http://redis.cn/clients.html">客户端</a>          <a href="http://redis.cn/documentation.html">文档</a>          <a href="http://redis.cn/community.html">社区</a>          <a href="http://redis.cn/download.html">下载</a>          <a href="https://github.com/antirez/redis/issues" target="_blank">问题</a>          <a href="http://redis.cn/topics/li
+cense.html">许可</a>          <a href="http://redis.cn/update.html">更新日志</a>        </nav>      </div>    </header>
+    <section id="commands">
+      <nav>
+        <a href="http://redis.cn/commands.html#" class="current">全部（All）</a>
+        <a href="http://redis.cn/commands.html#generic">关键字（Keys）</a>
+        <a href="http://redis.cn/commands.html#string">字符串（String）</a>
+        <a href="http://redis.cn/commands.html#hash">哈希（Hashs）</a>
+        <a href="http://redis.cn/commands.html#list">列表（Lists）</a>
+        <a href="http://redis.cn/commands.html#set">集合（Sets）</a>
+        <a href="http://redis.cn/commands.html#sorted_set">有序集合（Sorted Sets）</a><br>
+        <a href="http://redis.cn/commands.html#hyperLogLog">HyperLogLog</a>
+        <a href="http://redis.cn/commands.html#pubsub">发布/订阅（Pub/Sub）</a>
+        <a href="http://redis.cn/commands.html#transactions">事务（Transactions）</a>
+        <a href="http://redis.cn/commands.html#scripting">脚本（Scripting）</a>
+        <a href="http://redis.cn/commands.html#connection">连接（Connection）</a>
+        <a href="http://redis.cn/commands.html#server">服务（Server）</a>
+      </nav>
+      <script type="text/javascript">
+			document.write('<ul>');
+			showCommandsHtmlItem('append');
+			showCommandsHtmlItem('auth');
+			showCommandsHtmlItem('bgrewriteaof');
+			showCommandsHtmlItem('bgsave');
+			showCommandsHtmlItem('bitcount');
+			showCommandsHtmlItem('bitop');
+			showCommandsHtmlItem('blpop');
+			showCommandsHtmlItem('brpop');
+			showCommandsHtmlItem('brpoplpush');
+			showCommandsHtmlItem('client-kill');
+			showCommandsHtmlItem('client-list');
+			showCommandsHtmlItem('client-pause');
+			showCommandsHtmlItem('client-getname');
+			showCommandsHtmlItem('client-setname');
+			showCommandsHtmlItem('config-get'); 
+			showCommandsHtmlItem('config-rewrite');
+			showCommandsHtmlItem('config-set');
+			showCommandsHtmlItem('config-resetstat');
+			showCommandsHtmlItem('dbsize');
+			showCommandsHtmlItem('debug-object');
+			showCommandsHtmlItem('debug-segfault');
+			showCommandsHtmlItem('decr');
+			showCommandsHtmlItem('decrby');
+			showCommandsHtmlItem('del');
+			showCommandsHtmlItem('discard');
+			showCommandsHtmlItem('dump');
+			showCommandsHtmlItem('echo');
+			showCommandsHtmlItem('eval');
+			showCommandsHtmlItem('evalsha');
+			showCommandsHtmlItem('exec');
+			showCommandsHtmlItem('exists');
+			showCommandsHtmlItem('expire');
+			showCommandsHtmlItem('expireat');
+			showCommandsHtmlItem('flushall');
+			showCommandsHtmlItem('flushdb');
+			showCommandsHtmlItem('get');
+			showCommandsHtmlItem('getbit');
+			showCommandsHtmlItem('getrange');
+			showCommandsHtmlItem('getset');
+			showCommandsHtmlItem('hdel');
+			showCommandsHtmlItem('hexists');
+			showCommandsHtmlItem('hget');
+			showCommandsHtmlItem('hgetall');
+			showCommandsHtmlItem('hincrby');
+			showCommandsHtmlItem('hincrbyfloat');
+			showCommandsHtmlItem('hkeys');
+			showCommandsHtmlItem('hlen');
+			showCommandsHtmlItem('hmget');
+			showCommandsHtmlItem('hmset');
+			showCommandsHtmlItem('hscan');
+			showCommandsHtmlItem('hset');
+			showCommandsHtmlItem('hsetnx');
+			showCommandsHtmlItem('hvals');
+			showCommandsHtmlItem('incr');
+			showCommandsHtmlItem('incrby');
+			showCommandsHtmlItem('incrbyfloat');
+			showCommandsHtmlItem('info');
+			showCommandsHtmlItem('keys');
+			showCommandsHtmlItem('lastsave');
+			showCommandsHtmlItem('lindex');
+			showCommandsHtmlItem('linsert');
+			showCommandsHtmlItem('llen');
+			showCommandsHtmlItem('lpop');
+			showCommandsHtmlItem('lpush');
+			showCommandsHtmlItem('lpushx');
+			showCommandsHtmlItem('lrange');
+			showCommandsHtmlItem('lrem');
+			showCommandsHtmlItem('lset');
+			showCommandsHtmlItem('ltrim');
+			showCommandsHtmlItem('mget');
+			showCommandsHtmlItem('migrate');
+			showCommandsHtmlItem('monitor');
+			showCommandsHtmlItem('move');
+			showCommandsHtmlItem('mset');
+			showCommandsHtmlItem('msetnx');
+			showCommandsHtmlItem('multi');
+			showCommandsHtmlItem('object');
+			showCommandsHtmlItem('persist');
+			showCommandsHtmlItem('pexpire');
+			showCommandsHtmlItem('pexpireat');
+			showCommandsHtmlItem('pfadd');
+			showCommandsHtmlItem('pfcount');
+			showCommandsHtmlItem('pfmerge');
+			showCommandsHtmlItem('ping');
+			showCommandsHtmlItem('psetex');
+			showCommandsHtmlItem('psubscribe');
+			showCommandsHtmlItem('pttl');
+			showCommandsHtmlItem('publish');
+			showCommandsHtmlItem('pubsub');
+			showCommandsHtmlItem('punsubscribe');
+			showCommandsHtmlItem('quit');
+			showCommandsHtmlItem('randomkey');
+			showCommandsHtmlItem('rename');
+			showCommandsHtmlItem('renamenx');
+			showCommandsHtmlItem('restore');
+			showCommandsHtmlItem('rpop');
+			showCommandsHtmlItem('rpoplpush');
+			showCommandsHtmlItem('rpush');
+			showCommandsHtmlItem('rpushx');
+			showCommandsHtmlItem('sadd');
+			showCommandsHtmlItem('save');
+			showCommandsHtmlItem('scard');
+			showCommandsHtmlItem('scan');
+			showCommandsHtmlItem('script-exists');
+			showCommandsHtmlItem('script-flush');
+			showCommandsHtmlItem('script-kill');
+			showCommandsHtmlItem('script-load');
+			showCommandsHtmlItem('sdiff');
+			showCommandsHtmlItem('sdiffstore');
+			showCommandsHtmlItem('select');
+			showCommandsHtmlItem('set');
+			showCommandsHtmlItem('setbit');
+			showCommandsHtmlItem('setex');
+			showCommandsHtmlItem('setnx');
+			showCommandsHtmlItem('setrange');
+			showCommandsHtmlItem('shutdown');
+			showCommandsHtmlItem('sinter');
+			showCommandsHtmlItem('sinterstore');
+			showCommandsHtmlItem('sismember');
+			showCommandsHtmlItem('slaveof');
+			showCommandsHtmlItem('slowlog');
+			showCommandsHtmlItem('smembers');
+			showCommandsHtmlItem('smove');
+			showCommandsHtmlItem('sort');
+			showCommandsHtmlItem('spop');
+			showCommandsHtmlItem('srandmember');
+			showCommandsHtmlItem('srem');
+			showCommandsHtmlItem('sscan');
+			showCommandsHtmlItem('strlen');
+			showCommandsHtmlItem('subscribe');
+			showCommandsHtmlItem('sunion');
+			showCommandsHtmlItem('sunionstore');
+			showCommandsHtmlItem('sync');
+			showCommandsHtmlItem('time');
+			showCommandsHtmlItem('ttl');
+			showCommandsHtmlItem('type');
+			showCommandsHtmlItem('unsubscribe');
+			showCommandsHtmlItem('unwatch');
+			showCommandsHtmlItem('watch');
+			showCommandsHtmlItem('zadd');
+			showCommandsHtmlItem('zcard');
+			showCommandsHtmlItem('zcount');
+			showCommandsHtmlItem('zincrby');
+			showCommandsHtmlItem('zinterstore');
+			showCommandsHtmlItem('zrange');
+			showCommandsHtmlItem('zrangebyscore');
+			showCommandsHtmlItem('zrank');
+			showCommandsHtmlItem('zrem');
+			showCommandsHtmlItem('zremrangebyrank');
+			showCommandsHtmlItem('zremrangebyscore');
+			showCommandsHtmlItem('zrevrange');
+			showCommandsHtmlItem('zrevrangebyscore');
+			showCommandsHtmlItem('zrevrank');
+			showCommandsHtmlItem('zscan');
+			showCommandsHtmlItem('zscore');
+			showCommandsHtmlItem('zunionstore');
+			document.write('</ul>');		
+        </script><ul style="height: 3354px;"><li data-group="string"><span class="command"><a href="http://redis.cn/commands/append.html">APPEND</a><span class="args">&nbsp;key value</span></span><span class="summary">追加一个值到key上</span></li
+><li data-group="connection"><span class="command"><a href="http://redis.cn/commands/auth.html">AUTH</a><span class="args">&nbsp;password</span></span><span class="summary">验证服务器</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/bgrewriteaof.html">BGREWRITEAOF</a><span class="args">&nbsp;</span></span><span class="summary">异步重写追加文件</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/bgsave.html">BGSAVE</a><span class="args">&nbsp;</span></span><span class="summary">异步保存数据集到磁盘上</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/bitcount.html">BITCOUNT</a><span class="args">&nbsp;key [start] [end]</span></span><span class="summary">统计字符串指定起始位置的字节数</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/bitop.html">BITOP</a><span class="args">&nbsp;operation destkey key [key ...]</span></span><span class="summary">Perform bitwise operations between strings</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/blpop.html">BLPOP</a><span class="args">&nbsp;key [key ...] timeout</span></span><span class="summary">删除，并获得该列表中的第一元素，或阻塞，直到有一个可用</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/brpop.html">BRPOP</a><span class="args">&nbsp;key [key ...] timeout</span></span><span class="summary">删除，并获得该列表中的最后一个元素，或阻塞，直到有一个可用</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/brpoplpush.html">BRPOPLPUSH</a><span class="args">&nbsp;source destination timeout</span></span><span class="summary">弹出一个列表的值，将它推到另一个列表，并返回它;或阻塞，直到有一个可用</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/client-kill.html">CLIENT KILL</a><span class="args">&nbsp;ip:port</span></span><span class="summary">关闭客户端连接</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/client-list.html">CLIENT LIST</a><span class="args">&nbsp;</span></span><span class="summary">获得客户端连接列表</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/client-pause.html">CLIENT PAUSE</a><span class="args">&nbsp;timeout</span></span><span class="summary">暂停处理客户端命令</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/client-getname.html">CLIENT GETNAME</a><span class="args">&nbsp;</span></span><span class="summary">获得当前连接名称</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/client-setname.html">CLIENT SETNAME</a><span class="args">&nbsp;connection-name</span></span><span class="summary">设置当前连接的名字</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/config-get.html">CONFIG GET</a><span class="args">&nbsp;parameter</span></span><span class="summary">获取配置参数的值</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/config-rewrite.html">CONFIG REWRITE</a><span class="args">&nbsp;</span></span><span class="summary">从写内存中的配置文件</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/config-set.html">CONFIG SET</a><span class="args">&nbsp;parameter value</span></span><span class="summary">获取配置参数的值</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/config-resetstat.html">CONFIG RESETSTAT</a><span class="args">&nbsp;</span></span><span class="summary">复位再分配使用info命令报告的统计</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/dbsize.html">DBSIZE</a><span class="args">&nbsp;</span></span><span class="summary">返回当前数据库里面的keys数量</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/debug-object.html">DEBUG OBJECT</a><span class="args">&nbsp;key</span></span><span class="summary">获取一个key的debug信息</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/debug-segfault.html">DEBUG SEGFAULT</a><span class="args">&nbsp;</span></span><span class="summary">使服务器崩溃</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/decr.html">DECR</a><span class="args">&nbsp;key</span></span><span class="summary">整数原子减1</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/decrby.html">DECRBY</a><span class="args">&nbsp;key decrement</span></span><span class="summary">原子减指定的整数</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/del.html">DEL</a><span class="args">&nbsp;key [key ...]</span></span><span class="summary">删除一个key</span></li
+><li data-group="transactions"><span class="command"><a href="http://redis.cn/commands/discard.html">DISCARD</a><span class="args">&nbsp;</span></span><span class="summary">丢弃所有 MULTI 之后发的命令</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/dump.html">DUMP</a><span class="args">&nbsp;key</span></span><span class="summary">导出key的值</span></li
+><li data-group="connection"><span class="command"><a href="http://redis.cn/commands/echo.html">ECHO</a><span class="args">&nbsp;message</span></span><span class="summary">回显输入的字符串</span></li
+><li data-group="scripting"><span class="command"><a href="http://redis.cn/commands/eval.html">EVAL</a><span class="args">&nbsp;script numkeys key [key ...] arg [arg ...]</span></span><span class="summary">在服务器端执行 LUA 脚本</span></li
+><li data-group="scripting"><span class="command"><a href="http://redis.cn/commands/evalsha.html">EVALSHA</a><span class="args">&nbsp;sha1 numkeys key [key ...] arg [arg ...]</span></span><span class="summary">在服务器端执行 LUA 脚本</span></li
+><li data-group="transactions"><span class="command"><a href="http://redis.cn/commands/exec.html">EXEC</a><span class="args">&nbsp;</span></span><span class="summary">执行所有 MULTI 之后发的命令</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/exists.html">EXISTS</a><span class="args">&nbsp;key</span></span><span class="summary">查询一个key是否存在</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/expire.html">EXPIRE</a><span class="args">&nbsp;key seconds</span></span><span class="summary">设置一个key的过期的秒数</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/expireat.html">EXPIREAT</a><span class="args">&nbsp;key timestamp</span></span><span class="summary">设置一个UNIX时间戳的过期时间</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/flushall.html">FLUSHALL</a><span class="args">&nbsp;</span></span><span class="summary">清空所有数据库</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/flushdb.html">FLUSHDB</a><span class="args">&nbsp;</span></span><span class="summary">清空当前的数据库</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/get.html">GET</a><span class="args">&nbsp;key</span></span><span class="summary">获取key的值</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/getbit.html">GETBIT</a><span class="args">&nbsp;key offset</span></span><span class="summary">返回位的值存储在关键的字符串值的偏移量。</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/getrange.html">GETRANGE</a><span class="args">&nbsp;key start end</span></span><span class="summary">获取存储在key上的值的一个子字符串</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/getset.html">GETSET</a><span class="args">&nbsp;key value</span></span><span class="summary">设置一个key的value，并获取设置前的值</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hdel.html">HDEL</a><span class="args">&nbsp;key field [field ...]</span></span><span class="summary">删除一个或多个哈希域</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hexists.html">HEXISTS</a><span class="args">&nbsp;key field</span></span><span class="summary">判断给定域是否存在于哈希集中</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hget.html">HGET</a><span class="args">&nbsp;key field</span></span><span class="summary">读取哈希域的的值</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hgetall.html">HGETALL</a><span class="args">&nbsp;key</span></span><span class="summary">从哈希集中读取全部的域和值</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hincrby.html">HINCRBY</a><span class="args">&nbsp;key field increment</span></span><span class="summary">将哈希集中指定域的值增加给定的数字</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hincrbyfloat.html">HINCRBYFLOAT</a><span class="args">&nbsp;key field increment</span></span><span class="summary">将哈希集中指定域的值增加给定的浮点数</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hkeys.html">HKEYS</a><span class="args">&nbsp;key</span></span><span class="summary">获取hash的所有字段</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hlen.html">HLEN</a><span class="args">&nbsp;key</span></span><span class="summary">获取hash里所有字段的数量</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hmget.html">HMGET</a><span class="args">&nbsp;key field [field ...]</span></span><span class="summary">获取hash里面指定字段的值</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hmset.html">HMSET</a><span class="args">&nbsp;key field value [field value ...]</span></span><span class="summary">设置hash字段值</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hscan.html">HSCAN</a><span class="args">&nbsp;key cursor [MATCH pattern] [COUNT count]</span></span><span class="summary">迭代hash里面的元素</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hset.html">HSET</a><span class="args">&nbsp;key field value</span></span><span class="summary">设置hash里面一个字段的值</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hsetnx.html">HSETNX</a><span class="args">&nbsp;key field value</span></span><span class="summary">设置hash的一个字段，只有当这个字段不存在时有效</span></li
+><li data-group="hash"><span class="command"><a href="http://redis.cn/commands/hvals.html">HVALS</a><span class="args">&nbsp;key</span></span><span class="summary">获得hash的所有值</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/incr.html">INCR</a><span class="args">&nbsp;key</span></span><span class="summary">执行原子加1操作</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/incrby.html">INCRBY</a><span class="args">&nbsp;key increment</span></span><span class="summary">执行原子增加一个整数</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/incrbyfloat.html">INCRBYFLOAT</a><span class="args">&nbsp;key increment</span></span><span class="summary">执行原子增加一个浮点数</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/info.html">INFO</a><span class="args">&nbsp;[section]</span></span><span class="summary">获得服务器的详细信息</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/keys.html">KEYS</a><span class="args">&nbsp;pattern</span></span><span class="summary">查找所有匹配给定的模式的键</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/lastsave.html">LASTSAVE</a><span class="args">&nbsp;</span></span><span class="summary">获得最后一次同步磁盘的时间</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/li
+ndex.html">LINDEX</a><span class="args">&nbsp;key index</span></span><span class="summary">获取一个元素，通过其索引列表</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/li
+nsert.html">LINSERT</a><span class="args">&nbsp;key BEFORE|AFTER pivot value</span></span><span class="summary">在列表中的另一个元素之前或之后插入一个元素</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/llen.html">LLEN</a><span class="args">&nbsp;key</span></span><span class="summary">获得队列(List)的长度</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/lpop.html">LPOP</a><span class="args">&nbsp;key</span></span><span class="summary">从队列的左边出队一个元素</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/lpush.html">LPUSH</a><span class="args">&nbsp;key value [value ...]</span></span><span class="summary">从队列的左边入队一个或多个元素</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/lpushx.html">LPUSHX</a><span class="args">&nbsp;key value</span></span><span class="summary">当队列存在时，从队到左边入队一个元素</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/lrange.html">LRANGE</a><span class="args">&nbsp;key start stop</span></span><span class="summary">从列表中获取指定返回的元素</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/lrem.html">LREM</a><span class="args">&nbsp;key count value</span></span><span class="summary">从列表中删除元素</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/lset.html">LSET</a><span class="args">&nbsp;key index value</span></span><span class="summary">设置队列里面一个元素的值</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/ltrim.html">LTRIM</a><span class="args">&nbsp;key start stop</span></span><span class="summary">修剪到指定范围内的清单</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/mget.html">MGET</a><span class="args">&nbsp;key [key ...]</span></span><span class="summary">获得所有key的值</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/migrate.html">MIGRATE</a><span class="args">&nbsp;host port key destination-db timeout</span></span><span class="summary">原子性的将key从redis的一个实例移到另一个实例</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/monitor.html">MONITOR</a><span class="args">&nbsp;</span></span><span class="summary">实时监控服务器</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/move.html">MOVE</a><span class="args">&nbsp;key db</span></span><span class="summary">移动一个key到另一个数据库</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/mset.html">MSET</a><span class="args">&nbsp;key value [key value ...]</span></span><span class="summary">设置多个key value</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/msetnx.html">MSETNX</a><span class="args">&nbsp;key value [key value ...]</span></span><span class="summary">设置多个key value,仅当key存在时</span></li
+><li data-group="transactions"><span class="command"><a href="http://redis.cn/commands/multi.html">MULTI</a><span class="args">&nbsp;</span></span><span class="summary">标记一个事务块开始</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/object.html">OBJECT</a><span class="args">&nbsp;subcommand [arguments [arguments ...]]</span></span><span class="summary">检查内部的再分配对象</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/persist.html">PERSIST</a><span class="args">&nbsp;key</span></span><span class="summary">移除key的过期时间</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/pexpire.html">PEXPIRE</a><span class="args">&nbsp;key milliseconds</span></span><span class="summary">设置一个key的过期的毫秒数</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/pexpireat.html">PEXPIREAT</a><span class="args">&nbsp;key milliseconds-timestamp</span></span><span class="summary">设置一个带毫秒的UNIX时间戳的过期时间</span></li
+><li data-group="hyperLogLog"><span class="command"><a href="http://redis.cn/commands/pfadd.html">PFADD</a><span class="args">&nbsp;key element [element ...]</span></span><span class="summary">Adds the specified elements to the specified HyperLogLog.</span></li
+><li data-group="hyperLogLog"><span class="command"><a href="http://redis.cn/commands/pfcount.html">PFCOUNT</a><span class="args">&nbsp;key [key ...]</span></span><span class="summary">Return the approximated cardinality of the set(s) observed by the HyperLogLog at key(s).</span></li
+><li data-group="hyperLogLog"><span class="command"><a href="http://redis.cn/commands/pfmerge.html">PFMERGE</a><span class="args">&nbsp;destkey sourcekey [sourcekey ...]</span></span><span class="summary">Merge N different HyperLogLogs into a single one.</span></li
+><li data-group="connection"><span class="command"><a href="http://redis.cn/commands/ping.html">PING</a><span class="args">&nbsp;</span></span><span class="summary">Ping 服务器</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/psetex.html">PSETEX</a><span class="args">&nbsp;key milliseconds value</span></span><span class="summary">Set the value and expiration in milliseconds of a key</span></li
+><li data-group="pubsub"><span class="command"><a href="http://redis.cn/commands/psubscribe.html">PSUBSCRIBE</a><span class="args">&nbsp;pattern [pattern ...]</span></span><span class="summary">听出版匹配给定模式的渠道的消息</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/pttl.html">PTTL</a><span class="args">&nbsp;key</span></span><span class="summary">获取key的有效毫秒数</span></li
+><li data-group="pubsub"><span class="command"><a href="http://redis.cn/commands/publish.html">PUBLISH</a><span class="args">&nbsp;channel message</span></span><span class="summary">发布一条消息到频道</span></li
+><li data-group="pubsub"><span class="command"><a href="http://redis.cn/commands/pubsub.html">PUBSUB</a><span class="args">&nbsp;subcommand [argument [argument ...]]</span></span><span class="summary">检查的Pub/Sub子系统的状态</span></li
+><li data-group="pubsub"><span class="command"><a href="http://redis.cn/commands/punsubscribe.html">PUNSUBSCRIBE</a><span class="args">&nbsp;[pattern [pattern ...]]</span></span><span class="summary">停止发布到匹配给定模式的渠道的消息听</span></li
+><li data-group="connection"><span class="command"><a href="http://redis.cn/commands/quit.html">QUIT</a><span class="args">&nbsp;</span></span><span class="summary">关闭连接，退出</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/randomkey.html">RANDOMKEY</a><span class="args">&nbsp;</span></span><span class="summary">返回一个随机的key</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/rename.html">RENAME</a><span class="args">&nbsp;key newkey</span></span><span class="summary">将一个key重命名</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/renamenx.html">RENAMENX</a><span class="args">&nbsp;key newkey</span></span><span class="summary">重命名一个key,新的key必须是不存在的key</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/restore.html">RESTORE</a><span class="args">&nbsp;key ttl serialized-value</span></span><span class="summary">Create a key using the provided serialized value, previously obtained using DUMP.</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/rpop.html">RPOP</a><span class="args">&nbsp;key</span></span><span class="summary">从队列的右边出队一个元素</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/rpoplpush.html">RPOPLPUSH</a><span class="args">&nbsp;source destination</span></span><span class="summary">删除列表中的最后一个元素，将其追加到另一个列表</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/rpush.html">RPUSH</a><span class="args">&nbsp;key value [value ...]</span></span><span class="summary">从队列的右边入队一个元素</span></li
+><li data-group="list"><span class="command"><a href="http://redis.cn/commands/rpushx.html">RPUSHX</a><span class="args">&nbsp;key value</span></span><span class="summary">从队列的右边入队一个元素，仅队列存在时有效</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sadd.html">SADD</a><span class="args">&nbsp;key member [member ...]</span></span><span class="summary">添加一个或者多个元素到集合(set)里</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/save.html">SAVE</a><span class="args">&nbsp;</span></span><span class="summary">同步数据到磁盘上</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/scard.html">SCARD</a><span class="args">&nbsp;key</span></span><span class="summary">获取集合里面的元素数量</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/scan.html">SCAN</a><span class="args">&nbsp;cursor [MATCH pattern] [COUNT count]</span></span><span class="summary">增量迭代key</span></li
+><li data-group="scripting"><span class="command"><a href="http://redis.cn/commands/script-exists.html">SCRIPT EXISTS</a><span class="args">&nbsp;script [script ...]</span></span><span class="summary">Check existence of scripts in the script cache.</span></li
+><li data-group="scripting"><span class="command"><a href="http://redis.cn/commands/script-flush.html">SCRIPT FLUSH</a><span class="args">&nbsp;</span></span><span class="summary">删除服务器缓存中所有Lua脚本。</span></li
+><li data-group="scripting"><span class="command"><a href="http://redis.cn/commands/script-kill.html">SCRIPT KILL</a><span class="args">&nbsp;</span></span><span class="summary">杀死当前正在运行的 Lua 脚本。</span></li
+><li data-group="scripting"><span class="command"><a href="http://redis.cn/commands/script-load.html">SCRIPT LOAD</a><span class="args">&nbsp;script</span></span><span class="summary">从服务器缓存中装载一个Lua脚本。</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sdiff.html">SDIFF</a><span class="args">&nbsp;key [key ...]</span></span><span class="summary">获得队列不存在的元素</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sdiffstore.html">SDIFFSTORE</a><span class="args">&nbsp;destination key [key ...]</span></span><span class="summary">获得队列不存在的元素，并存储在一个关键的结果集</span></li
+><li data-group="connection"><span class="command"><a href="http://redis.cn/commands/select.html">SELECT</a><span class="args">&nbsp;index</span></span><span class="summary">选择数据库</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/set.html">SET</a><span class="args">&nbsp;key value</span></span><span class="summary">设置一个key的value值</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/setbit.html">SETBIT</a><span class="args">&nbsp;key offset value</span></span><span class="summary">Sets or clears the bit at offset in the string value stored at key</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/setex.html">SETEX</a><span class="args">&nbsp;key seconds value</span></span><span class="summary">设置key-value并设置过期时间（单位：秒）</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/setnx.html">SETNX</a><span class="args">&nbsp;key value</span></span><span class="summary">设置的一个关键的价值，只有当该键不存在</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/setrange.html">SETRANGE</a><span class="args">&nbsp;key offset value</span></span><span class="summary">Overwrite part of a string at key starting at the specified offset</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/shutdown.html">SHUTDOWN</a><span class="args">&nbsp;[NOSAVE] [SAVE]</span></span><span class="summary">关闭服务</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sinter.html">SINTER</a><span class="args">&nbsp;key [key ...]</span></span><span class="summary">获得两个集合的交集</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sinterstore.html">SINTERSTORE</a><span class="args">&nbsp;destination key [key ...]</span></span><span class="summary">获得两个集合的交集，并存储在一个关键的结果集</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sismember.html">SISMEMBER</a><span class="args">&nbsp;key member</span></span><span class="summary">确定一个给定的值是一个集合的成员</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/slaveof.html">SLAVEOF</a><span class="args">&nbsp;host port</span></span><span class="summary">指定当前服务器的主服务器</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/slowlog.html">SLOWLOG</a><span class="args">&nbsp;subcommand [argument]</span></span><span class="summary">管理再分配的慢查询日志</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/smembers.html">SMEMBERS</a><span class="args">&nbsp;key</span></span><span class="summary">获取集合里面的所有key</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/smove.html">SMOVE</a><span class="args">&nbsp;source destination member</span></span><span class="summary">移动集合里面的一个key到另一个集合</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/sort.html">SORT</a><span class="args">&nbsp;key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern ...]] [ASC|DESC] [ALPHA] [STORE destination]</span></span><span class="summary">对队列、集合、有序集合排序</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/spop.html">SPOP</a><span class="args">&nbsp;key</span></span><span class="summary">删除并获取一个集合里面的元素</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/srandmember.html">SRANDMEMBER</a><span class="args">&nbsp;key [count]</span></span><span class="summary">从集合里面随机获取一个key</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/srem.html">SREM</a><span class="args">&nbsp;key member [member ...]</span></span><span class="summary">从集合里删除一个或多个key</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sscan.html">SSCAN</a><span class="args">&nbsp;key cursor [MATCH pattern] [COUNT count]</span></span><span class="summary">迭代set里面的元素</span></li
+><li data-group="string"><span class="command"><a href="http://redis.cn/commands/strlen.html">STRLEN</a><span class="args">&nbsp;key</span></span><span class="summary">获取指定key值的长度</span></li
+><li data-group="pubsub"><span class="command"><a href="http://redis.cn/commands/subscribe.html">SUBSCRIBE</a><span class="args">&nbsp;channel [channel ...]</span></span><span class="summary">聆听发布途径的消息</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sunion.html">SUNION</a><span class="args">&nbsp;key [key ...]</span></span><span class="summary">添加多个set元素</span></li
+><li data-group="set"><span class="command"><a href="http://redis.cn/commands/sunionstore.html">SUNIONSTORE</a><span class="args">&nbsp;destination key [key ...]</span></span><span class="summary">合并set元素，并将结果存入新的set里面</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/sync.html">SYNC</a><span class="args">&nbsp;</span></span><span class="summary">用于复制的内部命令</span></li
+><li data-group="server"><span class="command"><a href="http://redis.cn/commands/time.html">TIME</a><span class="args">&nbsp;</span></span><span class="summary">返回当前服务器时间</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/ttl.html">TTL</a><span class="args">&nbsp;key</span></span><span class="summary">获取key的有效时间（单位：秒）</span></li
+><li data-group="generic"><span class="command"><a href="http://redis.cn/commands/type.html">TYPE</a><span class="args">&nbsp;key</span></span><span class="summary">获取key的存储类型</span></li
+><li data-group="pubsub"><span class="command"><a href="http://redis.cn/commands/unsubscribe.html">UNSUBSCRIBE</a><span class="args">&nbsp;[channel [channel ...]]</span></span><span class="summary">停止发布途径的消息听</span></li
+><li data-group="transactions"><span class="command"><a href="http://redis.cn/commands/unwatch.html">UNWATCH</a><span class="args">&nbsp;</span></span><span class="summary">取消事务</span></li
+><li data-group="transactions"><span class="command"><a href="http://redis.cn/commands/watch.html">WATCH</a><span class="args">&nbsp;key [key ...]</span></span><span class="summary">锁定key直到执行了 MULTI/EXEC 命令</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zadd.html">ZADD</a><span class="args">&nbsp;key score member [score member ...]</span></span><span class="summary">添加到有序set的一个或多个成员，或更新的分数，如果它已经存在</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zcard.html">ZCARD</a><span class="args">&nbsp;key</span></span><span class="summary">获取一个排序的集合中的成员数量</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zcount.html">ZCOUNT</a><span class="args">&nbsp;key min max</span></span><span class="summary">给定值范围内的成员数与分数排序</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zincrby.html">ZINCRBY</a><span class="args">&nbsp;key increment member</span></span><span class="summary">增量的一名成员在排序设置的评分</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zinterstore.html">ZINTERSTORE</a><span class="args">&nbsp;destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]</span></span><span class="summary">相交多个排序集，导致排序的设置存储在一个新的关键</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zrange.html">ZRANGE</a><span class="args">&nbsp;key start stop [WITHSCORES]</span></span><span class="summary">返回的成员在排序设置的范围，由指数</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zrangebyscore.html">ZRANGEBYSCORE</a><span class="args">&nbsp;key min max [WITHSCORES] [LIMIT offset count]</span></span><span class="summary">返回的成员在排序设置的范围，由得分</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zrank.html">ZRANK</a><span class="args">&nbsp;key member</span></span><span class="summary">确定在排序集合成员的索引</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zrem.html">ZREM</a><span class="args">&nbsp;key member [member ...]</span></span><span class="summary">从排序的集合中删除一个或多个成员</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zremrangebyrank.html">ZREMRANGEBYRANK</a><span class="args">&nbsp;key start stop</span></span><span class="summary">在排序设置的所有成员在给定的索引中删除</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zremrangebyscore.html">ZREMRANGEBYSCORE</a><span class="args">&nbsp;key min max</span></span><span class="summary">删除一个排序的设置在给定的分数所有成员</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zrevrange.html">ZREVRANGE</a><span class="args">&nbsp;key start stop [WITHSCORES]</span></span><span class="summary">在排序的设置返回的成员范围，通过索引，下令从分数高到低</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zrevrangebyscore.html">ZREVRANGEBYSCORE</a><span class="args">&nbsp;key max min [WITHSCORES] [LIMIT offset count]</span></span><span class="summary">返回的成员在排序设置的范围，由得分，下令从分数高到低</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zrevrank.html">ZREVRANK</a><span class="args">&nbsp;key member</span></span><span class="summary">确定指数在排序集的成员，下令从分数高到低</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zscan.html">ZSCAN</a><span class="args">&nbsp;key cursor [MATCH pattern] [COUNT count]</span></span><span class="summary">迭代sorted sets里面的元素</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zscore.html">ZSCORE</a><span class="args">&nbsp;key member</span></span><span class="summary">获取成员在排序设置相关的比分</span></li
+><li data-group="sorted_set"><span class="command"><a href="http://redis.cn/commands/zunionstore.html">ZUNIONSTORE</a><span class="args">&nbsp;destination numkeys key [key ...] [WEIGHTS weight [weight ...]] [AGGREGATE SUM|MIN|MAX]</span></span><span class="summary">添加多个排序集和导致排序的设置存储在一个新的关键</span></li
+></ul>      	
+    </section>
+    <div class="text" style="width:100%; max-width:93%;word-wrap:break-word;">
+      <section>
+redis所有已知命令：<br>    
+append,auth,bgrewriteaof,bgsave,bitcount,bitop,blpop,brpop,brpoplpush,client-kill,client-list,client-getname,
+client-setname,config-get,config-set,config-resetstat,dbsize,debug-object,debug-segfault,decr,decrby,del,discard,
+dump,echo,eval,evalsha,exec,exists,expire,expireat,flushall,flushdb,get,getbit,getrange,getset,hdel,hexists,hget,
+hgetall,hincrby,hincrbyfloat,hkeys,hlen,hmget,hmset,hset,hsetnx,hvals,incr,incrby,incrbyfloat,info,keys,lastsave,
+lindex,linsert,llen,lpop,lpush,lpushx,lrange,lrem,lset,ltrim,mget,migrate,monitor,move,mset,msetnx,multi,object,
+persist,pexpire,pexpireat,pfadd,pfcount,pfmerge,ping,psetex,psubscribe,pttl,publish,punsubscribe,quit,randomkey,rename,renamenx,restore,
+rpop,rpoplpush,rpush,rpushx,sadd,save,scard,script-exists,script-flush,script-kill,script-load,sdiff,sdiffstore,
+select,set,setbit,setex,setnx,setrange,shutdown,sinter,sinterstore,sismember,slaveof,slowlog,smembers,smove,sort,
+spop,srandmember,srem,strlen,subscribe,sunion,sunionstore,sync,time,ttl,type,unsubscribe,unwatch,watch,zadd,zcard,
+zcount,zincrby,zinterstore,zrange,zrangebyscore,zrank,zrem,zremrangebyrank,zremrangebyscore,zrevrange,
+zrevrangebyscore,zrevrank,zscore,zunionstore,pubsub,config-rewrite,client-pause,hscan,scan,sscan,zscan,
+</section>
+      
+    </div>
+    <script src="./Redis命令（commands） -- redis中文资料站_files/foot.js"></script><footer>     <div class="sponsor">        本站资源翻译自<a href="http://redis.io/" target="_blank">redis.io</a>，由<a href="http://redis.cn/aboutus.html">redis.cn翻译团队</a>，更新日志请点击<a href="http://redis.cn/update.html">这里</a>查看，翻译原文版权归redis.io官方所有，翻译不正确的地方欢迎大家指出。<br>        联系Email:<a href="mailto:admin@redis.cn">admin@redis.cn</a>，redis交流群：<a href="http://redis.cn/commands.html#">46859267</a> &nbsp; <script src="./Redis命令（commands） -- redis中文资料站_files/stat.php" language="JavaScript"></script><script src="./Redis命令（commands） -- redis中文资料站_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=3593514" target="_blank" title="站长统计">站长统计</a><br><span class="jiathis_txt">分享到：</span><a class="jiathis_button_tools_1" title="分享到QQ空间"><span class="jiathis_txt jiathis_separator jtico jtico_qzone">QQ空间</span></a>&nbsp;&nbsp;<a class="jiathis_button_tools_2" title="分享到新浪微博"><span class="jiathis_txt jiathis_separator jtico jtico_tsina">新浪微博</span></a>&nbsp;&nbsp;<a class="jiathis_button_tools_3" title="分享到腾讯微博"><span class="jiathis_txt jiathis_separator jtico jtico_tqq">腾讯微博</span></a>&nbsp;&nbsp;<a class="jiathis_button_tools_4" title="分享到微信"><span class="jiathis_txt jiathis_separator jtico jtico_weixin">微信</span></a>&nbsp;&nbsp;<a href="http://www.jiathis.com/share?uid=1875726" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>&nbsp;&nbsp;<a class="jiathis_counter_style"><span class="jiathis_button_expanded jiathis_counter jiathis_bubble_style" id="jiathis_counter_190" title="累计分享15次">15</span></a>      </div>    </footer><script type="text/javascript" src="./Redis命令（commands） -- redis中文资料站_files/jia.js" charset="utf-8"></script>
+  
+
+</body></html>
